@@ -152,6 +152,85 @@ if( $config['template'] !== 'no_template' && $config['location'] === 'after' ){
 
 <a href="#" id="totop" class="u-trans-all-2s js-scroll-event" data-forch="300" data-visibleclass="on--totop" data-hiddenclass="off--totop" ><?php echo __( 'TOP', 'zn_framework' ); ?></a>
 <?php zn_footer(); ?>
-<?php wp_footer(); ?>
+<?php wp_footer(); ?> 
+<script src="https://use.fontawesome.com/583b8ed0d6.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$(window).load(function(){
+			if(localStorage.getItem('popState') != 'shown'){
+				$('#popup_mailchimp').animate({'opacity': '1'}, 1500);
+				$('#popup_mailchimp').css({'z-index': '99999'});
+				localStorage.setItem('popState','shown')
+		    }
+
+			$('#popup_mailchimp .close-pop').click(function(){
+				$('#popup_mailchimp').animate({'opacity': '0'}, 1000, function() { 
+					$('#popup_mailchimp').css({'z-index': '-1500'}); 
+				});
+			});
+
+			var $form = $('#popup_mailchimp form');
+
+			$('form input[type="submit"]').bind('click', function ( event ) {
+				if ( event ) event.preventDefault();
+				register($form)
+			});
+
+			function register($form) {
+			    $.ajax({
+			        type: $form.attr('method'),
+			        url: $form.attr('action'),
+			        data: $form.serialize(),
+			        cache       : false,
+			        dataType    : 'jsonp',
+			        contentType: "application/json; charset=utf-8",
+			        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+			        success     : function(data) {
+			            if (data.result != "success") {
+			                // Something went wrong, do something to notify the user. maybe alert(data.msg);
+							$('.errorSignUp').fadeIn();
+							$('.errorSignUp').append('<br /><p><u>Error:</u> '+data['msg']+'</p>');
+			            } else {
+			                // It worked, carry on...
+			                console.log('success');
+			                console.log(data['msg']);
+			                $('.signUpPara, #mc_embed_signup, .errorSignUp').fadeOut('slow');
+			                $('.successSignUp').delay(1000).fadeIn('slow');
+			            }
+			        }
+			    });
+			}
+		});
+	});
+</script>
+<div id="popup_mailchimp">
+	<div class="wrapper">
+		<div class="inside">
+			<div class="close-pop"><i class="fa fa-times"></i></div>
+			<p class="signUpPara">Sign up to our Newsletter today, and start receiving offers only available to our friends!</p>
+			<p class="successSignUp">Thank you for signing up to our Newsletter. Please check your inbox for a confirmation email!</p>
+			<p class="errorSignUp">Sorry, something went wrong.<br /> Please try again later.</p>
+			<!-- Begin MailChimp Signup Form -->
+				<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+				<style type="text/css">
+					#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+					/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+					   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+				</style>
+				<div id="mc_embed_signup">
+					<form action="//learntechnique.us15.list-manage.com/subscribe/post-json?u=3574759aff3eaef872f610742&amp;id=b2fa03406f&c=?" method="get" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					    <div id="mc_embed_signup_scroll">
+						<label for="mce-EMAIL">Subscribe to our mailing list</label>
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your Email Address" required>
+					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3574759aff3eaef872f610742_b2fa03406f" tabindex="-1" value=""></div>
+					    <div class="clear"><input type="submit" value="SIGN UP" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+					    </div>
+					</form>
+				</div>
+				<!--End mc_embed_signup-->
+		</div>
+	</div>
+</div>
 </body>
 </html>

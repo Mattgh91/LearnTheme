@@ -164,3 +164,12 @@ function znpb_add_kallyas_template( $current_layout, $post, $post_id ){
 }
 
 
+/**
+ * Changes the redirect URL for the Return To Shop button in the cart.
+ *
+ * @return string
+ */
+function wc_empty_cart_redirect_url() {
+    return 'https://learntechnique.com/product-category/product-finder/';
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
