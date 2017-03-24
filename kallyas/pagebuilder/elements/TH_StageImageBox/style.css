@@ -1,0 +1,15 @@
+/* STAGE Image Box */
+.stage-ibx {}
+.stage-ibx__stage {position:relative; }
+.stage-ibx__stage-img {}
+.stage-ibx__point {display: none;}
+/* MQ's */
+@media screen and (min-width: 1200px) {
+	.stage-ibx__point {display:block; position:absolute; opacity:0; width:0; height:0; -webkit-transition: opacity 1s ease-out; transition: opacity 1s ease-out;}
+	.stage-ibx__point:after {content:'';position: absolute; left: 0; top: 0; width:10px; height:10px; margin-left:-5px; margin-top:-5px; display: block; background: rgba(255, 255, 255, 0.6); box-shadow: 0 0 0 3px #FFFFFF; border-radius: 50%; -webkit-transition: box-shadow .2s ease-out, -webkit-transform .2s ease-out; transition: box-shadow .2s ease-out, transform .2s ease-out; }
+	.stage-ibx__point:hover:after,
+	.stage-ibx__point.is-hover:after { box-shadow: 0 0 0 5px #FFFFFF, 0 4px 10px #000; -webkit-transform:scale(1.4); -ms-transform:scale(1.4); transform:scale(1.4); }
+	.stage-ibx__point[data-title]:before {content:attr(data-title); position:absolute; bottom:100%; left:50%; min-width: 100px; transform:translateX(-50%); background:rgba(0,0,0,0.9); color:#fff; font-size: 12px; line-height: 1.4; padding: 6px 3px; text-align: center; border-radius: 3px;margin-bottom: 30px;visibility: hidden;opacity: 0;transition: opacity .2s ease-out .1s,visibility .2s ease-out .1s,margin-bottom .2s ease-out .1s;}
+	.stage-ibx__point[data-title]:hover:before,
+	.stage-ibx__point[data-title].is-hover:before {opacity:1; visibility:visible; margin-bottom:20px}
+}

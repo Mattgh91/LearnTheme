@@ -1,0 +1,22 @@
+.zn-extensions-container { padding: 15px; margin-top: 35px; }
+.zn-extensions-container p { margin-top: 0;  }
+.zn-extensions-container .zn-extensions-header h2 { font-weight: 700; }
+.zn-extensions-container .zn-extensions-header { text-align: center; margin-bottom: 35px; }
+.zn-extensions-container .zn-extensions-header p { margin-top: 0; color: #868686; }
+.zn-extensions-container .zn-extensions-list { list-style: none; margin: 0 -15px; overflow: hidden;  padding: 35px 0; }
+.zn-extensions-container .zn-extensions-list li { float: left; width: 50%; padding: 0 15px; box-sizing: border-box; }
+.zn-extensions-container .zn-extensions-list li .zn-extension-inner {  border: 1px solid #EAEAEA; background-color: #fff; padding: 30px 0px 0; text-align: center; box-shadow: 0px 5px 5px -4px #D2D0D0;}
+.zn-extensions-container .zn-extensions-list li .zn-extension-status { border: 1px solid #BFBFBF; color:#868686; border-radius: 3px; padding: 5px 10px; margin-bottom: 15px; display: inline-block;}
+.zn-extensions-container .zn-extensions-list li .zn-extension-status.active { border: 1px solid #8BE46C; color:#8BE46C;  }
+.zn-extensions-container .zn-extensions-list li .zn-extension-author {  color:#DCDCDC;  }
+.zn-extensions-container .zn-extension-info { border-bottom:1px solid #EAEAEA; padding: 0 15px;  }
+.zn-extensions-container .zn-extension-actions { padding: 15px 0px;  }
+
+/* Ajax css */
+.zn-extensions-container .spinner { display:none; }
+.zn-extensions-container .spinner.is-active { display: inline-block; }
+
+/** Error container **/
+.zn-extensions-error-container{background: #fff; padding: 20px; text-align: center; box-shadow: 0px 5px 5px -4px #D2D0D0; } 
+.zn-extensions-error-message {font-size: 16px; color:red; margin-bottom: 15px; }
+.zn-extensions-error-location {font-style: italic; color:#ccc; }
