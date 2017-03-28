@@ -13,7 +13,7 @@ Text Domain: zn_framework
 
 /* THIS CLASS MUST BE ADDED 'hideRequired' TO EACH PRODUCT, TO HIDE A REPLICATE ASTERISK (*) FROM APPEARING ON THE REQUIRED DATE FIELD */
 .hideRequired-div h3.tm-has-required { 
-	display:none; 
+    display:none; 
 }
 
 /* WooCommerce Related */
@@ -27,14 +27,14 @@ Text Domain: zn_framework
     background: linear-gradient(#0d6468, #68baad);
 }
 .woocommerce .switch-toggle {
-	height: 2.875em;
+    height: 2.875em;
 }
 .woocommerce .switch-toggle input + label {
-	padding-top:6px;
-	cursor:pointer;
+    padding-top:6px;
+    cursor:pointer;
 }
 .woocommerce #wc-deposits-options-form .amount {
-	color:#196f71;
+    color:#196f71;
 }
 .woocommerce #respond input#submit.alt.disabled, 
 .woocommerce #respond input#submit.alt.disabled:hover, 
@@ -61,29 +61,28 @@ Text Domain: zn_framework
 .woocommerce input.button.alt:disabled[disabled], 
 .woocommerce input.button.alt:disabled[disabled]:hover,
 .woocommerce div.product form.cart div.quantity .qty {
-	height:52px !important;
+    height:52px !important;
 }
 .woocommerce .tm-epo-field.tmcp-select {
-	width:100%;
-	padding:9px 5px;
+    width:100%;
+    padding:9px 5px;
 }
 .product-list-item.prod-layout-classic:hover:before, 
 .woocommerce ul.products li.product .product-list-item.prod-layout-classic:hover:before {
-	box-shadow: inset 0 0 0 4px #0a6369 !important;
+    box-shadow: inset 0 0 0 4px #0a6369 !important;
 }
-
 
 /* Contact Form */
 .ContactCaptchaCaptcha { 
-	width:20% !important; 
+    width:20% !important; 
 }
 .ContactClassCaptchaInput { 
-	width:75% !important; 
-	margin-left:5%; 
-	min-height: 55.25px; 
+    width:75% !important; 
+    margin-left:5%; 
+    min-height: 55.25px; 
 }
 .contactFormSubmit input[type=submit] {    
-	background: #0a6369;
+    background: #0a6369;
     color: #f6f6f6;
     text-transform: uppercase;
     border: 3px solid #0a6369 !important;
@@ -95,22 +94,34 @@ Text Domain: zn_framework
     border: 3px solid #0a6369;
 }
 
+/* FAQ Page */
+.faqGeneralQuestions .acc--default-style .acc-tgg-button:not(.collapsed) {
+    background-color: #0a6369;
+    color: #ffffff;
+}
+
+/* Accomodation Page */
+.chesterfieldColumn,
+.watfordColumn,
+.aberdeenColumn,
+.stirlingColumn { cursor: pointer; }
+
 /* Pop up box -- Newsletter, Mailchimp */
-#popup_mailchimp {	 
-	position: fixed; 
-	width: 100%; 
-	height: 100%; 
-	top: 0; 
-	background: rgba(8, 79, 84, 0.5);
-	z-index: -100;
-	opacity:0;
-	display:table;
-	/*-webkit-transition: all 0.5s ease-in-out;  -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;  transition: all 0.5s ease-in-out;*/
+#popup_mailchimp {   
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    background: rgba(8, 79, 84, 0.5);
+    z-index: -100;
+    opacity:0;
+    display:table;
+    /*-webkit-transition: all 0.5s ease-in-out;  -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;  transition: all 0.5s ease-in-out;*/
 }
 #popup_mailchimp.visible {
-	opacity:1; 
-	z-index: 99999;
-	/*-webkit-transition: all 0.5s ease-in-out;  -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;  transition: all 0.5s ease-in-out;*/
+    opacity:1; 
+    z-index: 99999;
+    /*-webkit-transition: all 0.5s ease-in-out;  -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;  transition: all 0.5s ease-in-out;*/
 }
 #popup_mailchimp .wrapper {
     display: table-cell;
@@ -125,20 +136,20 @@ Text Domain: zn_framework
     color: #f6f6f6;
 }
 #popup_mailchimp .wrapper .inside p.successSignUp { 
-	display:none;    
+    display:none;    
     margin: 0 auto;
     max-width: 85%;
     color: #f6f6f6; 
     padding-top:45px;
 }
 #popup_mailchimp .wrapper .inside p.errorSignUp {
-	display:none;
+    display:none;
     margin: 0px auto 20px;
     max-width: 85%;
     color: #fe4a4a;
 }
 #popup_mailchimp .wrapper .inside {     
-	max-width: 350px;
+    max-width: 350px;
     margin: 0 auto;
     padding: 25px 0 35px;
     background: #09595f;
@@ -155,14 +166,14 @@ Text Domain: zn_framework
     padding: 0;
 }
 #popup_mailchimp .wrapper .inside form p {
-	margin:0 0 10px;
+    margin:0 0 10px;
 }
 #popup_mailchimp .wrapper .inside form .mc4wp-form-fields p:last-child {
-	margin:0;
+    margin:0;
 }
 #popup_mailchimp .wrapper .inside form label {
-	display: none;
-	text-transform: uppercase;
+    display: none;
+    text-transform: uppercase;
 }
 #popup_mailchimp .wrapper .inside form input[type=email] {
     width: 75%;
@@ -181,16 +192,16 @@ Text Domain: zn_framework
     background: #b4cacc;
     border: none;
     line-height: 14px;
-	font-size: 14px;
-	border-radius: 0;
-	margin:0 auto 10px;
+    font-size: 14px;
+    border-radius: 0;
+    margin:0 auto 10px;
     -webkit-transition: all 0.3s ease-in-out;  -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out;  transition: all 0.3s ease-in-out;
 }
 #popup_mailchimp .wrapper .inside form input[type=submit]:hover {
-	background: #f6f6f6;
+    background: #f6f6f6;
 }
 #popup_mailchimp .wrapper .inside .close-pop {
-	margin: 0 auto;
+    margin: 0 auto;
     max-width: 300px;
     top: -15px;
     text-align: right;
@@ -201,14 +212,14 @@ Text Domain: zn_framework
 
 /* Responsive */
 @media screen and (max-width:600px) {
-	.ContactClassCaptchaInput {
-		display: block;
-	    clear: both;
-	    margin-left: 0;
-	    margin-top: 25px;
-	    width: 100% !important;
-	}
-	.ContactCaptchaCaptcha {
-		min-width: 115px;
-	}
+    .ContactClassCaptchaInput {
+        display: block;
+        clear: both;
+        margin-left: 0;
+        margin-top: 25px;
+        width: 100% !important;
+    }
+    .ContactCaptchaCaptcha {
+        min-width: 115px;
+    }
 }

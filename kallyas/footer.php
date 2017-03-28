@@ -201,6 +201,22 @@ if( $config['template'] !== 'no_template' && $config['location'] === 'after' ){
 			    });
 			}
 		});
+		$('.chesterfieldColumn').click(function() {
+			var $anchor = $('#chesterfieldRow').offset();
+			$('html, body').animate({ scrollTop: $anchor.top - 50 }, 1000);
+		});
+		$('.watfordColumn').click(function() {
+			var $anchor = $('#watfordRow').offset();
+			$('html, body').animate({ scrollTop: $anchor.top - 50 }, 1000);
+		});
+		$('.aberdeenColumn').click(function() {
+			var $anchor = $('#aberdeenRow').offset();
+			$('html, body').animate({ scrollTop: $anchor.top - 50 }, 1000);
+		});
+		$('.stirlingColumn').click(function() {
+			var $anchor = $('#stirlingRow').offset();
+			$('html, body').animate({ scrollTop: $anchor.top - 50 }, 1000);
+		});
 	});
 </script>
 <div id="popup_mailchimp">
