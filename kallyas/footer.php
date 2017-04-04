@@ -171,7 +171,7 @@ if( $config['template'] !== 'no_template' && $config['location'] === 'after' ){
 
 			var $form = $('#popup_mailchimp form');
 
-			$('form input[type="submit"]').bind('click', function ( event ) {
+			$('#popup_mailchimp form input[type="submit"]').bind('click', function ( event ) {
 				if ( event ) event.preventDefault();
 				register($form)
 			});
