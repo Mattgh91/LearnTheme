@@ -173,3 +173,11 @@ function wc_empty_cart_redirect_url() {
     return 'https://learntechnique.com/product-category/product-finder/';
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+add_filter( 'woocommerce_billing_fields', 'my_required_fields' );
+
+function my_required_fields( $address_fields ) {
+	$address_fields['billing_dob']['required'] = true;
+	$address_fields['billing_id']['required'] = true;
+	return $address_fields;
+}
