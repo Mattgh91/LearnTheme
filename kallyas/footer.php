@@ -29,7 +29,7 @@ if( $config['template'] !== 'no_template' ){
 if ( $show_footer == 'yes' ) { ?>
 	<footer id="footer" class="site-footer" <?php echo $style;?>>
 		<div class="container">
-			<?php
+			<?php //echo 'Hello';
 
 				if ( zget_option( 'footer_row1_show', 'general_options', false, 'yes' ) == 'yes' ) {
 
@@ -201,6 +201,7 @@ if( $config['template'] !== 'no_template' && $config['location'] === 'after' ){
 			    });
 			}
 		});
+
 		$('.chesterfieldColumn').click(function() {
 			var $anchor = $('#chesterfieldRow').offset();
 			$('html, body').animate({ scrollTop: $anchor.top - 50 }, 1000);
@@ -217,6 +218,28 @@ if( $config['template'] !== 'no_template' && $config['location'] === 'after' ){
 			var $anchor = $('#stirlingRow').offset();
 			$('html, body').animate({ scrollTop: $anchor.top - 50 }, 1000);
 		});
+
+		$(window).on("load resize",function(e){
+			var windowWidth = $(window).width();
+			if(windowWidth < 613 && windowWidth > 420) {
+				var menuWidth = $('#menu-item-1964').width() + $('#menu-item-1965').width() + $('#menu-item-1638').width() + $('#menu-item-1635').width();
+				var someWidth = windowWidth - menuWidth;
+				var cssMargin = (someWidth / 2) - 50;
+				$('#menu-item-1964').css({marginLeft: cssMargin+'px'});
+			}
+			else if(windowWidth > 613 || windowWidth < 420) {
+				$('#menu-item-1964').css({marginLeft: '10px'});
+			}
+		});
+
+		$(window).scroll(function(){
+		  var sticky = $('.kl-main-header'),
+		      scroll = $(window).scrollTop();
+		      var $headerHeight = $('.kl-top-header').height();
+		  if (scroll >= $headerHeight) sticky.addClass('fixed');
+		  else sticky.removeClass('fixed');
+		});
+
 	});
 </script>
 <div id="popup_mailchimp">
