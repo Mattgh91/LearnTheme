@@ -28,8 +28,39 @@ if( $config['template'] !== 'no_template' ){
 
 if ( $show_footer == 'yes' ) { ?>
 	<footer id="footer" class="site-footer" <?php echo $style;?>>
+
+	<div class="static_mailchimp_wrapper">
+		<div id="static_mailchimp" class="container">
+			<div class="wrapper">
+				<div class="inside">
+					<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+					<style type="text/css">
+						#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+						/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+						   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+					</style>
+					<div id="mc_embed_signup">
+						<form action="//learntechnique.us15.list-manage.com/subscribe/post-json?u=3574759aff3eaef872f610742&amp;id=b2fa03406f&c=?" method="get" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+						    <div id="mc_embed_signup_scroll">
+								<label for="mce-EMAIL">Subscribe to our newsletter</label>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your Email Address" required>
+							    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+							    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3574759aff3eaef872f610742_b2fa03406f" tabindex="-1" value=""></div>
+							    <div class="clear"><input type="submit" value="SIGN UP" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+						    </div>
+							</form>
+						</div>
+						<!--End mc_embed_signup-->
+						<div class="staticSuccessMessage">
+							<p>Thanks for signing up to our newsletter.<br />Please check your emails for sign up confirmation!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="container">
-			<?php //echo 'Hello';
+			<?php
 
 				if ( zget_option( 'footer_row1_show', 'general_options', false, 'yes' ) == 'yes' ) {
 
@@ -200,6 +231,36 @@ if( $config['template'] !== 'no_template' && $config['location'] === 'after' ){
 			        }
 			    });
 			}
+
+			var $staticForm = $('#static_mailchimp form');
+
+			$('form input[type="submit"]').bind('click', function ( event ) {
+				if ( event ) event.preventDefault();
+				registerStat($staticForm)
+			});
+
+			function registerStat($staticForm) {
+			    $.ajax({
+			        type: $staticForm.attr('method'),
+			        url: $staticForm.attr('action'),
+			        data: $staticForm.serialize(),
+			        cache       : false,
+			        dataType    : 'jsonp',
+			        contentType: "application/json; charset=utf-8",
+			        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+			        success     : function(data) {
+			            if (data.result != "success") {
+			                // Something went wrong, do something to notify the user. maybe alert(data.msg);
+							alert(data['msg']);
+			            } else {
+			                // It worked, carry on...
+			                $('#static_mailchimp #mc_embed_signup form').fadeOut('slow')
+			                $('.staticSuccessMessage').delay(1000).fadeIn('slow');
+			            }
+			        }
+			    });
+			}
+
 		});
 
 		$('.chesterfieldColumn').click(function() {

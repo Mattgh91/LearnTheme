@@ -266,12 +266,81 @@ Text Domain: zn_framework
     left: 0;
     z-index: -99;
 }*/
+/** Static Footer Form **/
+footer.site-footer { 
+    padding-top:0; 
+}
+#static_mailchimp {
+    min-height:161px;
+}
+#static_mailchimp   #mc_embed_signup {
+    background:transparent;
+}
+#static_mailchimp #mc_embed_signup form {
+    background: transparent;
+    padding: 20px 0;
+    color: #fff;
+}
+#static_mailchimp #mc_embed_signup input.button {
+    background: #0a6369;
+    width: 385px;
+    max-width:100%;
+    clear: none;
+    float: left;
+    border-radius: 0;
+    font-size:14px;
+    margin: 10px auto;
+    float: none;
+    font-weight:400;
+}
+#static_mailchimp #mc_embed_signup input.button:hover {
+    background:#084f54;
+}
+#static_mailchimp #mc_embed_signup input.email {
+    float: none;
+    margin: 0 auto;
+    border-radius: 0;
+    width: 385px;
+    max-width:100%;
+    color:#484848;
+}
+#static_mailchimp #mc_embed_signup label {
+    float: none;
+    line-height: 32px;
+    padding: 0;
+    font-size: 28px;
+    font-family: montserrat;
+    font-weight:400;
+    text-align:center;
+}
+.static_mailchimp_wrapper {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.35), 
+        rgba(0, 0, 0, 0.55)
+      ),  url('/wp-content/uploads/2017/04/newsletterBackgroundImage.jpg') no-repeat center center fixed;
+    padding: 60px 0;
+    margin: 0 0 50px;
+    background-size: cover;  
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+}
+.staticSuccessMessage {
+    display:none;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    padding-top: 60px;
+}
+
+/* Delete After Easter */
 .easterContainer h3 {
     width:100%;
     font-size: 2.5rem !important;
     letter-spacing: 0.25px !important;
     max-width:90% !important;
 }
+
 @media screen and (min-width: 768px) {
     .easterContainer {
         padding-top:200px !important;
@@ -308,6 +377,9 @@ Text Domain: zn_framework
     .secureSectionTwo {
         width:100%;
         text-align:center;
+    }
+    .static_mailchimp_wrapper {
+        background-attachment: scroll;
     }
 }
 @media screen and (max-width:600px) {
