@@ -234,7 +234,7 @@ if( $config['template'] !== 'no_template' && $config['location'] === 'after' ){
 
 			var $staticForm = $('#static_mailchimp form');
 
-			$('form input[type="submit"]').bind('click', function ( event ) {
+			$('#static_mailchimp form input[type="submit"]').bind('click', function ( event ) {
 				if ( event ) event.preventDefault();
 				registerStat($staticForm)
 			});
